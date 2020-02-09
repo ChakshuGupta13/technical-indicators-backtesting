@@ -50,7 +50,7 @@ print('Starting Portfolio Value: %.2f' % cerebro.broker.getvalue())
 print('Starting Portfolio Cash: %.2f' % cerebro.broker.get_cash())
 
 cerebro.addstrategy(BiraStrategy)
-cerebro.adddata(bt.feeds.YahooFinanceData(dataname='^NSEI', fromdate=datetime(2013, 1, 1), todate=datetime(2019, 1, 2))bt.feeds.YahooFinanceData(dataname='^NSEI', fromdate=datetime(2013, 1, 1), todate=datetime(2019, 1, 2)))
+cerebro.adddata(bt.feeds.YahooFinanceData(dataname='^NSEI', fromdate=datetime(2013, 1, 1), todate=datetime(2019, 1, 2)))
 cerebro.broker.set_cash(200000)
 cerebro.run()
 

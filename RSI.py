@@ -3,7 +3,7 @@ import backtrader as bt
 
 
 class RelativeStrengthIndexStrategy(bt.SignalStrategy):
-    def _init_(self):
+    def __init__(self):
         self.index = bt.ind.RelativeStrengthIndex()
 
     def next(self):

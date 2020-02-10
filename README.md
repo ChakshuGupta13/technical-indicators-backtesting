@@ -5,6 +5,8 @@ Simulated backtrading using financial technical indicators:
 - Ichimoku
 - Attempts to develop a new trading strategy **BIRA** (Brew of Ichimoku, RSI and ADX)
 
+BIRA achieved accuracy for prediction: **60%**
+
 ### Install Additional Dependancies
 ```
 pip3 install backtrader

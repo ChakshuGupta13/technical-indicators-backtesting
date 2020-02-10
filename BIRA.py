@@ -33,7 +33,7 @@ class IchimokuCrossStrategy(bt.Strategy):
         self.senkou_span_a = self.ich.l.senkou_span_a[0]
         self.senkou_span_b = self.ich.l.senkou_span_b[0]
         self.ichi = self.ich.l.chikou_span[0]
-        if self.dmiplus > self.dmimin and self.adx[0] > 25:
+        if self.dmiplus > self.dmimin and self.adx[0] > 25 or self.datas[0].open < self.ichi and self.senkou_span_a > self.senkou_span_b :
             self.buy_ctr += 1
             self.buy(size=QTY)
             self.decision = "BUY"
@@ -42,7 +42,7 @@ class IchimokuCrossStrategy(bt.Strategy):
                     self.correct_ctr_buy += 1
             except:
                 pass
-        elif self.datas[0].open > self.ichi or self.rsi > 70:
+        elif self.datas[0].open > self.ichi and self.senkou_span_a < self.senkou_span_b or self.dmiplus < self.dmimin and self.adx[0] > 25 :
             self.sell_ctr += 1
             self.decision = "SELL"
             try:
